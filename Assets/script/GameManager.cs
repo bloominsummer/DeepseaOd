@@ -60,11 +60,13 @@ public class GameManager : MonoBehaviour
         if (playerController != null)
         {
             playerController.ResetPlayer();
+
             Rigidbody2D playerRb = playerController.GetComponent<Rigidbody2D>();
-            if (playerRb != null) playerRb.simulated = true;
+            if (playerRb != null)
+                playerRb.simulated = true;
         }
+
         gameState = GameState.Playing;
-        CurrentScore = 0;
     }
 
     public void AddScore()
