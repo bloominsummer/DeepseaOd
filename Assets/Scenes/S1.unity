@@ -2200,11 +2200,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1571428303}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e20e3b60d0f04f49b8c0f65eb2667db, type: 3}
+  m_Script: {fileID: 11500000, guid: 948052da5a621884cadfb4ae0adb258a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  logo: {fileID: 1631805428}
+  playButton: {fileID: 1611883911}
   score: {fileID: 1428095294}
-  playerController: {fileID: 1920238902}
+  gameReadyPanel: {fileID: 1577341621}
+  gameOverPanel: {fileID: 1729251802}
+  gameOverScore: {fileID: 1778421717}
+  gameOverBestScore: {fileID: 748426019}
+  playerController: {fileID: 1920238904}
 --- !u!1001 &1576731721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2449,7 +2455,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1571428305}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameManagerScene1, Assembly-CSharp
         m_MethodName: PlayButtonClick
         m_Mode: 1
         m_Arguments:
@@ -2841,8 +2847,8 @@ GameObject:
   - component: {fileID: 1920238899}
   - component: {fileID: 1920238898}
   - component: {fileID: 1920238897}
-  - component: {fileID: 1920238902}
   - component: {fileID: 1920238903}
+  - component: {fileID: 1920238904}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3000,23 +3006,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1920238902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1920238896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 917a73e1a5dbf1749ae186c1b5bbed3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  floatAmplitude: 0.1
-  floatSpeed: 4
-  forwardSpeed: 3
-  jumpForce: 5
-  rotationSpeed: 20
 --- !u!114 &1920238903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3044,8 +3033,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1920238902}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+      - m_Target: {fileID: 1920238904}
+        m_TargetAssemblyTypeName: S1PlayerController, Assembly-CSharp
         m_MethodName: OnTap
         m_Mode: 0
         m_Arguments:
@@ -3063,6 +3052,22 @@ MonoBehaviour:
   m_DefaultActionMap: GamePlay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1920238904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920238896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1acd078dccf05e40bda308df56bb2a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floatAmplitude: 0.1
+  floatSpeed: 4
+  jumpForce: 5
+  rotationSpeed: 20
 --- !u!1 &2029851180
 GameObject:
   m_ObjectHideFlags: 0
