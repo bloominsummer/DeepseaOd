@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.collider.CompareTag("Obstacle"))
         {
-            GameManager.Instance.GameOver();
+            GameManager.Instance.LoseLife();
         }
     }
 

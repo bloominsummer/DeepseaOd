@@ -14,6 +14,11 @@ public class GameManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private PlayerController playerController;
 
+    [Header("Life")]    
+    [SerializeField] private GameObject[] hearts;
+
+    private int life;
+
     private GameState gameState = GameState.Playing; 
 
     public GameState GameState => gameState;
@@ -43,6 +48,13 @@ public class GameManager : MonoBehaviour
     {
         gameState = GameState.Playing;
         CurrentScore = 0;
+
+        life = hearts.Length;
+
+        foreach (GameObject heart in hearts)
+        {
+            heart.SetActive(true);
+        }
 
         if (score != null) score.gameObject.SetActive(true);
 
@@ -75,8 +87,35 @@ public class GameManager : MonoBehaviour
         CurrentScore++;
     }
 
+    public void LoseLife()
+    {
+        life--;
+
+        if (life >= 0 && life < hearts.Length)
+        {
+            hearts[life].SetActive(false);
+        }
+
+        if (life <= 0)
+        {
+            GameOver();
+        }
+        else
+        {
+            playerController.ResetPlayer();
+
+            Rigidbody2D rb = playerController.GetComponent<Rigidbody2D>();
+            if (rb != null)
+                rb.simulated = true;
+        }
+    }
+
     public void GameOver()
     {
-        ResetGame();
+        gameState = GameState.GameOver;
+
+        Debug.Log("GAME OVER");
+
+        // nanti bisa ditambahkan panel Game Over
     }
 }
