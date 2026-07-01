@@ -81,10 +81,16 @@ public class GameManager : MonoBehaviour
         gameState = GameState.Playing;
     }
 
-    public void AddScore()
+    public void AddScore(int amount)
     {
-        if (gameState != GameState.Playing) return;
-        CurrentScore++;
+        if (gameState != GameState.Playing)
+            return;
+
+        CurrentScore += amount;
+
+        // Supaya skor tidak negatif
+        if (CurrentScore < 0)
+            CurrentScore = 0;
     }
 
     public void LoseLife()

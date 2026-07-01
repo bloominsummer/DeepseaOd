@@ -12,7 +12,7 @@ public class ItemController : MonoBehaviour
         {
             Destroy(collision.gameObject);
 
-            GameManager.Instance.AddScore();
+            GameManager.Instance.AddScore(2);
         }
     }
 }
